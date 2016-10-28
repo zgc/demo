@@ -46,22 +46,8 @@ public class SynchronizedTest {
     }
 
     public static void main(String[] args) {
-        new Thread() {
-            @Override
-            public void run() {
-                fun();
-            }
-        }.start();
-
-
-        new Thread() {
-            @Override
-            public void run() {
-                fun1();
-            }
-        }.start();
-
-
+        new Thread(() -> fun()).start();
+        new Thread(() -> fun1()).start();
         new Thread() {
             @Override
             public void run() {

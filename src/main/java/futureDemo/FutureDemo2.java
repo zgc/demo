@@ -27,7 +27,7 @@ public class FutureDemo2 {
 		MyCallable task4 = new MyCallable("www.google.com.hk", 4000);
 		CallableForUser userTask = new CallableForUser("machine");
 		
-		List<Callable<String>> tasks = new ArrayList<Callable<String>>();
+		List<Callable<String>> tasks = new ArrayList<>();
 		tasks.add(task1);
 		tasks.add(task2);
 		tasks.add(task3);

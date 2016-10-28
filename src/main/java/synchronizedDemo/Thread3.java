@@ -52,16 +52,8 @@ public class Thread3 {
     public static void main(String[] args) {
         final Thread3 myt3 = new Thread3();
         final Inner inner = myt3.new Inner();
-        Thread t1 = new Thread(new Runnable() {
-            public void run() {
-                myt3.m4t1(inner);
-            }
-        }, "t1");
-        Thread t2 = new Thread(new Runnable() {
-            public void run() {
-                myt3.m4t2(inner);
-            }
-        }, "t2");
+        Thread t1 = new Thread(() -> myt3.m4t1(inner), "t1");
+        Thread t2 = new Thread(() -> myt3.m4t2(inner), "t2");
         t1.start();
         t2.start();
     }
